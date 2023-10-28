@@ -1,0 +1,112 @@
+{
+  "uuid": "ab16d1ac-1270-4b19-836a-9ac2dcc714cd",
+  "lastMigration": 28,
+  "name": "Teste",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "badd923e-0d9f-4158-b418-367793df66f5",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "de87c277-8df6-4c3b-bab6-be026f6fe846",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "686e6ea9-32d7-4a04-9b46-a37c12424147",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "15139798-6efc-4787-b04a-37d2f39aeae1",
+          "body": "[ [\n  {{#repeat 20}}\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"name\": \"{{faker 'name.firstName'}} {{faker 'name.lastName'}}\",\n      \"email\": \"{{faker 'internet.email'}}\",\n      \"phone\": \"{{faker 'phone.number'}}\",\n      \"address\": \"{{faker 'address.streetAddress'}}, {{faker 'address.city'}}, {{faker 'address.stateAbbr'}} {{faker 'address.zipCode'}}\",\n      \"birthdate\": \"{{faker 'date.past'}}\",\n      \"isActive\": {{faker 'datatype.boolean'}}\n    }{{#unless @last}},{{/unless}}\n  {{/repeat}}\n] ]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "badd923e-0d9f-4158-b418-367793df66f5"
+    },
+    {
+      "type": "route",
+      "uuid": "686e6ea9-32d7-4a04-9b46-a37c12424147"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}

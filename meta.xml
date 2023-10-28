@@ -1,0 +1,14 @@
+<meta>
+    <info author="sousateew" />
+
+    <script src="shared/main.lua" type="shared" cache="false" />
+
+    <script src="client/usefull.lua" type="client" cache="false" />
+    <script src="client/panel.lua" type="client" cache="false" />
+
+    <script src="server/api.lua" type="server" />
+    <script src="server/main.lua" type="server" />
+
+    <file src="assets/regular.ttf" />
+    <file src="assets/medium.ttf" />
+</meta>
